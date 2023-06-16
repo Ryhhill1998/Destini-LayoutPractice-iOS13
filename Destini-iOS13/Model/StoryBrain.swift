@@ -47,4 +47,14 @@ struct StoryBrain {
     func getCurrentStory() -> Story {
         return stories[currentStory]
     }
+    
+    mutating func updateCurrentStory(choice: Int) {
+        let story = getCurrentStory()
+        
+        if choice == 1 {
+            currentStory = story.choice1Destination
+        } else {
+            currentStory = story.choice2Destination
+        }
+    }
 }
